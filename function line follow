@@ -1,0 +1,36 @@
+//Code created by Ethan Rankin. Edited by Eric Visser and Sean Sanker
+void line_follow();
+
+int main()
+{
+	line_follow();
+	//function for line following
+	//Move backwards
+	motor(0, -100);
+	motor(3, -100);
+	msleep(12500);
+	motor(0, -100);
+	motor(3, -100);
+	
+	return 0;
+	
+}
+
+void line_follow(void) 
+{
+while (digital(8) != 1)
+	{
+		if (analog(6) > 512)
+		{
+			motor(0, 20);
+			motor(3, 100);
+		}
+		
+		else	
+		{
+			motor(0, 100);
+			motor(3, 20);
+			
+		}
+	}
+}
